@@ -75,6 +75,18 @@ Create a ```GET``` endpoint that retrieves all patients and displays their:
 - ```last_name```
 - ```date_of_birth```
 
+app.get('',(req, res) => {
+    const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth FROM patients"
+    db.query(getPatients, (err, data) => {
+        // If i have an error
+        if(err) {
+            return res.status(400).send("Failed to get patients", err)
+        }
+
+        res.status(200).send(data)
+    })
+})
+
 <br>
 
 ## 2. Retrieve all providers
@@ -83,15 +95,51 @@ Create a ```GET``` endpoint that displays all providers with their:
 - ```last_name```
 - ```provider_specialty```
 
+app.get('',(req, res) => {
+    const getProviders = "SELECT first_name, last_name, provider_specialty FROM providers"
+    db.query(getProviders, (err, data) => {
+        // If i have an error
+        if(err) {
+            return res.status(400).send("Failed to get patients", err)
+        }
+
+        res.status(200).send(data)
+    })
+})
+
 <br>
 
 ## 3. Filter patients by First Name
 Create a ```GET``` endpoint that retrieves all patients by their first name
 
+app.get('',(req, res) => {
+    const getPatients = "SELECT first_name FROM patients"
+    db.query(getPatients, (err, data) => {
+        // If i have an error
+        if(err) {
+            return res.status(400).send("Failed to get patients", err)
+        }
+
+        res.status(200).send(data)
+    })
+})
+
 <br>
 
 ## 4. Retrieve all providers by their specialty
 Create a ```GET``` endpoint that retrieves all providers by their specialty
+
+app.get('',(req, res) => {
+    const getProviders = "SELECT provider_specialty FROM providers"
+    db.query(getProviders, (err, data) => {
+        // If i have an error
+        if(err) {
+            return res.status(400).send("Failed to get patients", err)
+        }
+
+        res.status(200).send(data)
+    })
+})
 
 <br>
 
