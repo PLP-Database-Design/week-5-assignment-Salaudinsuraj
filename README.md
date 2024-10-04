@@ -100,7 +100,7 @@ app.get('',(req, res) => {
     db.query(getProviders, (err, data) => {
         // If i have an error
         if(err) {
-            return res.status(400).send("Failed to get patients", err)
+            return res.status(400).send("Failed to get providers", err)
         }
 
         res.status(200).send(data)
@@ -117,7 +117,7 @@ app.get('',(req, res) => {
     db.query(getPatients, (err, data) => {
         // If i have an error
         if(err) {
-            return res.status(400).send("Failed to get patients", err)
+            return res.status(400).send("Failed to get patient's first name", err)
         }
 
         res.status(200).send(data)
@@ -134,7 +134,7 @@ app.get('',(req, res) => {
     db.query(getProviders, (err, data) => {
         // If i have an error
         if(err) {
-            return res.status(400).send("Failed to get patients", err)
+            return res.status(400).send("Failed to get provider's specialty", err)
         }
 
         res.status(200).send(data)
